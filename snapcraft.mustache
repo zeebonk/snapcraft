@@ -1,0 +1,20 @@
+name: asyncy
+version: {{version}}
+summary: Asyncy CLI
+description: Asyncy CLI
+grade: devel
+confinement: devmode
+
+apps:
+  asyncy:
+    command: bin/asyncy
+
+parts:
+  asyncy:
+    source: https://github.com/asyncy/cli/archive/{{version}}.tar.gz
+    plugin: python
+    python-version: python3
+    python-packages:
+    {{#packages}}
+    - {{name}}=={{version}}
+    {{/packages}}
