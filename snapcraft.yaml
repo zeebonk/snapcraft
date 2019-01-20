@@ -4,10 +4,14 @@ summary: Asyncy CLI
 description: Asyncy CLI
 grade: devel
 confinement: devmode
+base: core18
 
 apps:
   asyncy:
     command: bin/asyncy
+    environment:
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
 
 parts:
   asyncy:
